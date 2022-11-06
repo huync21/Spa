@@ -105,4 +105,37 @@ public class NhapNguyenLieuController {
         model.addAttribute("successLabel", "Nhập nguyên liệu thành công!");
         return "gdTimNhaCungCap";
     }
+
+    @GetMapping(value = "/them-nha-cung-cap")
+    public String hienThiGDThemNhaCungCap(Model model){
+        model.addAttribute("nhaCungCap", new NhaCungCapDTO());
+        return "gdThemNhaCungCap";
+    }
+    @PostMapping(value = "/them-nha-cung-cap")
+    public String themNhaCungCap(@Valid @ModelAttribute("nhaCungCap") NhaCungCapDTO nhaCungCap, BindingResult bindingResult,
+                                 Model model, Principal principal){
+        if(bindingResult.hasErrors())
+            return "gdThemNhaCungCap";
+        nhaCungCap.setUser(userService.findUserByName(principal.getName()));
+        nhaCungCapService.save(nhaCungCap);
+        model.addAttribute("labelThemNhaCCSuccess", "Thêm thành công nhà cung cấp!");
+        return "gdTimNhaCungCap";
+    }
+
+    @GetMapping(value = "/them-nguyen-lieu")
+    public String hienThiGDThemNguyenLieu(Model model){
+        model.addAttribute("nguyenLieu", new NguyenLieuDTO());
+        return "gdThemNguyenLieu";
+    }
+
+    @PostMapping(value = "/them-nguyen-lieu")
+    public String themNguyenLieu(@Valid @ModelAttribute("nguyenLieu") NguyenLieuDTO nguyenLieu, BindingResult bindingResult,
+                                 Model model, Principal principal){
+        if(bindingResult.hasErrors())
+            return "gdThemNguyenLieu";
+        nguyenLieu.setUser(userService.findUserByName(principal.getName()));
+        nguyenLieuService.save(nguyenLieu);
+        model.addAttribute("labelThemNguyenLieuSuccess", "Thêm thành công nguyên liệu!");
+        return "gdNhapCacNguyenLieu";
+    }
 }

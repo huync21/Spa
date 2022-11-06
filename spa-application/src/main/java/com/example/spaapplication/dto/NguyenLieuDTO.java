@@ -6,13 +6,16 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
+import javax.validation.constraints.NotBlank;
+
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class NguyenLieuDTO {
     Integer id;
-    @NotNull
+    @NotBlank
     String ten;
+    @NotBlank
     String tenHangSanXuat;
     String moTa;
     UserDto user;

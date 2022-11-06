@@ -26,9 +26,10 @@
 <form th:action="@{/nhap-nguyen-lieu/tim-nguyen-lieu}" method="post">
     <input type="text" th:value="${keyword}" name="keyword"/>
     <input type="submit" value="Tìm"/>
-    <button><a href="">Thêm nguyên liệu</a></button>
+    <button><a th:href="@{/nhap-nguyen-lieu/them-nguyen-lieu}">Thêm đầu nguyên liệu</a></button>
     <p th:text ="${notFoundLabel}" style="color: red"/>
 </form>
+<p th:text="${labelThemNguyenLieuSuccess}" style="color: green"></p>
 <h3>Đầu mục nguyên liệu</h3>
 <table>
     <tr>

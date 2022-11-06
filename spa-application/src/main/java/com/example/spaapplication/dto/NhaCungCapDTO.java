@@ -5,17 +5,17 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class NhaCungCapDTO {
     Integer id;
-    @NotNull(message = "Tên không được bỏ trống")
+    @NotBlank(message = "Tên không được bỏ trống")
     String ten;
     String moTa;
-    @NotNull(message = "Địa chỉ không được bỏ trống")
+    @NotBlank(message = "Địa chỉ không được bỏ trống")
     String diaChi;
     UserDto user;
 }

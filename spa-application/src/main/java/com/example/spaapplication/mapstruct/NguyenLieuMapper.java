@@ -10,4 +10,5 @@ import java.util.List;
 public interface NguyenLieuMapper {
     List<NguyenLieuDTO> to(List<NguyenLieu> nguyenLieus);
     NguyenLieuDTO to(NguyenLieu nguyenLieu);
+    NguyenLieu from(NguyenLieuDTO nguyenLieuDTO);
 }

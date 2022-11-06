@@ -5,15 +5,15 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Thêm nhà cung cấp</h1>
-<form th:action="@{/nhap-nguyen-lieu/them-nha-cung-cap}" th:object="${nhaCungCap}" method="post">
+<h1>Thêm nguyên liệu</h1>
+<form th:action="@{/nhap-nguyen-lieu/them-nguyen-lieu}" th:object="${nguyenLieu}" method="post">
     <p>Tên: <input type="text" th:field="*{ten}"/></p>
     <ul>
         <li th:each="err : ${#fields.errors('ten')}" th:text="${err}" class="error" style="color: red"/>
     </ul>
-    <p>Địa chỉ: <input type="text" th:field="*{diaChi}"/></p>
+    <p>Tên hãng sản xuất: <input type="text" th:field="*{tenHangSanXuat}"/></p>
     <ul>
-        <li th:each="err : ${#fields.errors('diaChi')}" th:text="${err}" class="error" style="color: red"/>
+        <li th:each="err : ${#fields.errors('tenHangSanXuat')}" th:text="${err}" class="error" style="color: red"/>
     </ul>
     <p>Mô tả: <input type="text" th:field="*{moTa}"/></p>
     <input type="submit" value="Thêm"/>

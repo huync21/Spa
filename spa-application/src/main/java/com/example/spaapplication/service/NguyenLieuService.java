@@ -19,4 +19,7 @@ public class NguyenLieuService {
     public NguyenLieuDTO getNguyenLieu(Integer id){
         return nguyenLieuMapper.to(nguyenLieuRepository.findById(id).orElse(null));
     }
+    public void save(NguyenLieuDTO nguyenLieuDTO){
+        nguyenLieuRepository.save(nguyenLieuMapper.from(nguyenLieuDTO));
+    }
 }

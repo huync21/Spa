@@ -10,4 +10,5 @@ import java.util.List;
 public interface NhaCungCapMapper {
     List<NhaCungCapDTO> to(List<NhaCungCap> nhaCungCap);
     NhaCungCapDTO to(NhaCungCap nhaCungCap);
+    NhaCungCap from(NhaCungCapDTO nhaCungCapDTO);
 }

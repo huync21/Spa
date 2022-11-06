@@ -20,7 +20,7 @@ public class NhaCungCap {
     String ten;
     String moTa;
     String diaChi;
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
     @JoinColumn(name = "user_id")
     User user;
 }

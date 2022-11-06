@@ -25,4 +25,8 @@ public class NhaCungCapService {
        }
        return null;
     }
+
+    public void save(NhaCungCapDTO nhaCungCapDTO){
+        nhaCungCapRepository.save(nhaCungCapMapper.from(nhaCungCapDTO));
+    }
 }

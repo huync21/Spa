@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+<h1>Nhập các nguyên liệu</h1>
+<form th:action="@{/nhap-nguyen-lieu/tim-nguyen-lieu}" method="post">
+    <input type="text" th:value="${keyword}" name="keyword"/>
+    <input type="submit" value="Tìm"/>
+    <button><a href="">Thêm nguyên liệu</a></button>
+    <p th:text ="${notFoundLabel}" style="color: red"/>
+</form>
+<h3>Đầu mục nguyên liệu</h3>
+<table>
+    <tr>
+        <th>Mã</th>
+        <th>Tên nguyên liệu</th>
+        <th>Tên hãng sản xuất</th>
+        <th></th>
+    </tr>
+    <tr th:each = "nguyenLieu:${listNguyenLieu}">
+        <td th:text="${nguyenLieu.id}"/>
+        <td th:text="${nguyenLieu.ten}"/>
+        <td th:text="${nguyenLieu.tenHangSanXuat}"/>
+        <td>
+            <a th:href="@{'/nhap-nguyen-lieu/nhap-so-luong-don-gia?nguyenLieuId='+${nguyenLieu.id}}">Chọn</a>
+        </td>
+    </tr>
+</table>
+<h3>Nguyên liệu được thêm</h3>
+<table>
+    <tr>
+        <th>Mã</th>
+        <th>Tên nguyên liệu</th>
+        <th>Đơn giá</th>
+        <th>Số lượng</th>
+
+    </tr>
+    <tr th:each = "nguyenLieuTrongLanNhap :${session.lanNhap.listNguyenLieuTrongLanNhap}">
+        <td th:text="${nguyenLieuTrongLanNhap.id}"/>
+        <td th:text="${nguyenLieuTrongLanNhap.nguyenLieu.ten}"/>
+        <td th:text="${nguyenLieuTrongLanNhap.donGia}"/>
+        <td th:text="${nguyenLieuTrongLanNhap.soLuong}"/>
+    </tr>
+</table>
+<p style="color: red" th:text="${chuaNhapNguyenLieuLabel}"></p>
+<form th:action="@{/nhap-nguyen-lieu/xac-nhan-lan-nhap}" method="post">
+    <input type="submit" value="Xác nhận"/>
+</form>
+</body>
+</html>

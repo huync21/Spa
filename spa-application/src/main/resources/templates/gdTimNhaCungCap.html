@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Tìm Nhà Cung Cấp</h1>
+<form th:action="@{/nhap-nguyen-lieu/tim-nha-cung-cap}" method="post">
+    <input type="text" th:value="${keyword}" name="keyword"/>
+    <input type="submit" value="Tìm"/>
+    <button><a href="">Thêm nhà cung cấp</a></button>
+    <p th:text ="${notFoundLabel}" style="color: red"/>
+    <p th:text ="${successLabel}" style="color: green"/>
+</form>
+</body>
+</html>

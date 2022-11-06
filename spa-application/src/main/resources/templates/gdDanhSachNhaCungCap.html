@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+<h1>Danh Sách Nhà Cung Cấp</h1>
+<form th:action="@{/nhap-nguyen-lieu/tim-nha-cung-cap}" method="post">
+    <input type="text" th:value="${keyword}" name="keyword"/>
+    <input type="submit" value="Tìm"/>
+    <button><a href="">Thêm nhà cung cấp</a></button>
+    <p th:text ="${notFoundLabel}" style="color: red"/>
+</form>
+<table>
+    <tr>
+        <th>Mã</th>
+        <th>Tên nhà cung cấp</th>
+        <th>Địa chỉ</th>
+        <th></th>
+    </tr>
+    <tr th:each = "nhaCungCap: ${listNhaCungCap}">
+        <td th:text="${nhaCungCap.id}"/>
+        <td th:text="${nhaCungCap.ten}"/>
+        <td th:text="${nhaCungCap.diaChi}"/>
+        <td>
+            <a th:href="@{'/nhap-nguyen-lieu/nhap-cac-nguyen-lieu?nhaCungCapId='+${nhaCungCap.id}}">Chọn</a>
+        </td>
+    </tr>
+
+</table>
+</body>
+</html>

@@ -23,7 +23,7 @@ public class NguyenLieu {
     String tenHangSanXuat;
     @Column(name = "mo_ta")
     String moTa;
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinColumn(name = "user_id")
     User user;
 }

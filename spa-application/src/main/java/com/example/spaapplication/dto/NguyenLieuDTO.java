@@ -1,9 +1,6 @@
 package com.example.spaapplication.dto;
 
-import com.sun.istack.NotNull;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import javax.validation.constraints.NotBlank;
@@ -11,6 +8,9 @@ import javax.validation.constraints.NotBlank;
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class NguyenLieuDTO {
     Integer id;
     @NotBlank

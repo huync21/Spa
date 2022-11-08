@@ -1,0 +1,6 @@
+INSERT INTO spa.tbllannhap (id, mo_ta, created_date, updated_date, created_by, last_modified_by, user_id, tbl_nha_cung_cap_id) VALUES (6, null, '2022-11-07 02:52:17.690', '2022-11-07 02:52:17.690', null, null, 1, 1);
+INSERT INTO spa.tbllannhap (id, mo_ta, created_date, updated_date, created_by, last_modified_by, user_id, tbl_nha_cung_cap_id) VALUES (7, null, '2022-11-07 02:53:10.799', '2022-11-07 02:53:10.799', null, null, 1, 2);
+INSERT INTO spa.tbllannhap (id, mo_ta, created_date, updated_date, created_by, last_modified_by, user_id, tbl_nha_cung_cap_id) VALUES (8, null, '2022-11-07 03:00:04.517', '2022-11-07 03:00:04.517', null, null, 1, 1);
+INSERT INTO spa.tbllannhap (id, mo_ta, created_date, updated_date, created_by, last_modified_by, user_id, tbl_nha_cung_cap_id) VALUES (9, null, '2022-11-07 04:56:33.602', '2022-11-07 04:56:33.602', null, null, 1, 1);
+INSERT INTO spa.tbllannhap (id, mo_ta, created_date, updated_date, created_by, last_modified_by, user_id, tbl_nha_cung_cap_id) VALUES (10, 'babsldgsd', '2022-11-07 07:36:54.866', '2022-11-07 07:36:54.866', null, null, 1, 1);
+INSERT INTO spa.tbllannhap (id, mo_ta, created_date, updated_date, created_by, last_modified_by, user_id, tbl_nha_cung_cap_id) VALUES (11, 'babsldgsd', '2022-11-07 07:39:19.045', '2022-11-07 07:39:19.045', null, null, 1, 1);
